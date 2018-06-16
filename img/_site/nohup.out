@@ -1,0 +1,24 @@
+[33mConfiguration file: none[0m
+            Source: /data1/yanghongfei.github.io/img
+       Destination: /data1/yanghongfei.github.io/img/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.018 seconds.
+RubyDep: WARNING: Your Ruby is outdated/buggy.
+RubyDep: WARNING: Your Ruby is: 2.3.0 (buggy). Recommendation: upgrade to 2.3.1.
+RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/Disabling-warnings )
+ Auto-regeneration: enabled for '/data1/yanghongfei.github.io/img'
+    Server address: http://172.16.0.101:4000
+  Server running... press ctrl-c to stop.
+[33mConfiguration file: none[0m
+            Source: /data1/yanghongfei.github.io/img
+       Destination: /data1/yanghongfei.github.io/img/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.018 seconds.
+RubyDep: WARNING: Your Ruby is outdated/buggy.
+RubyDep: WARNING: Your Ruby is: 2.3.0 (buggy). Recommendation: upgrade to 2.3.1.
+RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/Disabling-warnings )
+ Auto-regeneration: enabled for '/data1/yanghongfei.github.io/img'
+    Server address: http://172.16.0.101:4000
+  Server running... press ctrl-c to stop.
