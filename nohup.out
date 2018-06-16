@@ -1,0 +1,83 @@
+Configuration file: /data1/python/DevOps/yangxiaofei-blog/_config.yml
+[33m       Deprecation: The 'gems' configuration option has been renamed to 'plugins'. Please update your config file accordingly.[0m
+            Source: /data1/python/DevOps/yangxiaofei-blog
+       Destination: /data1/python/DevOps/yangxiaofei-blog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    done in 0.383 seconds.
+RubyDep: WARNING: Your Ruby is outdated/buggy.
+RubyDep: WARNING: Your Ruby is: 2.3.0 (buggy). Recommendation: upgrade to 2.3.1.
+RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/Disabling-warnings )
+ Auto-regeneration: enabled for '/data1/python/DevOps/yangxiaofei-blog'
+    Server address: http://172.16.0.18:4000/
+  Server running... press ctrl-c to stop.
+[2018-06-07 23:08:37] ERROR `/about/img/fred.jpg' not found.
+[2018-06-07 23:08:37] ERROR `/about/img/fred.jpg' not found.
+      Regenerating: 1 file(s) changed at 2018-06-07 23:23:23
+                    _posts/2015-07-09-js-module-7day.markdown
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.160414437 seconds.
+
+[2018-06-07 23:26:34] ERROR `/about/img/fred.jpg' not found.
+[2018-06-07 23:26:34] ERROR `/about/img/fred.jpg' not found.
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.152337709 seconds.
+
+      Regenerating: 16 file(s) changed at 2018-06-08 11:05:21
+                    js/jquery.js
+                    js/jquery.min.js
+                    js/jquery.tagcloud.js
+                    LICENSE
+                    nohup.out
+                    README.zh.md
+                    tags.html
+                    _includes/footer.html
+                    _includes/head.html
+                    _includes/nav.html
+                    _layouts/default.html
+                    _layouts/keynote.html
+                    _layouts/page.html
+                    _layouts/post.html
+                    _posts/2015-07-09-js-module-7day.markdown
+                    _posts/2018-06-07-Kubeadm.markdown
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.162737865 seconds.
+
+      Regenerating: 1 file(s) changed at 2018-06-08 11:06:35
+                    nohup.out
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.149508987 seconds.
+
+[2018-06-08 18:12:12] ERROR `/about/img/fred.jpg' not found.
