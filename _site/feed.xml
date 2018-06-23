@@ -5,8 +5,8 @@
     <description></description>
     <link>http://172.16.0.101:4000/</link>
     <atom:link href="http://172.16.0.101:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 23 Jun 2018 14:01:49 +0800</pubDate>
-    <lastBuildDate>Sat, 23 Jun 2018 14:01:49 +0800</lastBuildDate>
+    <pubDate>Sat, 23 Jun 2018 14:14:16 +0800</pubDate>
+    <lastBuildDate>Sat, 23 Jun 2018 14:14:16 +0800</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -130,8 +130,8 @@ go version go1.10.1 linux/amd64
 |   admin-key.pem    |      |            |       |    √    |          |        |
 |    flanneld.pem    |      |            |       |         |    √     |        |
 |  flanneld-key.pem  |      |            |       |         |    √     |        |
-| shinezone.com.crt  |      |            |       |         |          |   √    |
-| shinezone.com.key  |      |            |       |         |          |   √    |&lt;/p&gt;
+| your&lt;em&gt;domain.crt  |      |            |       |         |          |   √    |
+| your&lt;/em&gt;domain.key  |      |            |       |         |          |   √    |&lt;/p&gt;
 
 &lt;h4 id=&quot;5-2-cfssl&quot;&gt;5.2 二进制安装CFSSL&lt;/h4&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
@@ -2373,14 +2373,14 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: traefik-nginx.shinezone.com
+  - host: traefik-nginx.your_domain
     http:
       paths:
       - path: /
         backend:
           serviceName: my-nginx
           servicePort: 80
-  - host: traefik-apache.shinezone.com
+  - host: traefik-apache.your_domain
     http:
       paths:
       - path: /
@@ -2406,7 +2406,7 @@ spec:
     spec:
       containers:
       - name: my-apache
-        image: harbor.shinezone.com/shinezonetest/nginx:latest 
+        image: harbor.your_domain/shinezonetest/nginx:latest 
         ports:
         - containerPort: 80
 
@@ -2442,7 +2442,7 @@ spec:
     spec:
       containers:
       - name: my-apache
-        image: harbor.shinezone.com/shinezonetest/httpd:latest
+        image: harbor.your_domain/shinezonetest/httpd:latest
         ports:
         - containerPort: 80
 
@@ -2484,16 +2484,16 @@ kube-system   traefik-ingress-lb-ztwqc                1/1       Running   2     
 &lt;p&gt;访问我们刚刚启动的2个&lt;code&gt;my-nginx&lt;/code&gt;和&lt;code&gt;my-apache&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;我的网站主页是被我修改过的，登陆修改命令：&lt;code&gt;kubectl exec -ti  my-nginx-7d74dd5487-htjps -n default bash&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ curl Host:traefik-apache.shinezone.com http://172.30.33.6:80
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ curl Host:traefik-apache.your_domain http://172.30.33.6:80
 This is Apache Web
 
-$ curl Host:traefik-nginx.shinezone.com http://172.30.59.6:80
+$ curl Host:traefik-nginx.your_domain http://172.30.59.6:80
 This is Nginx Web
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;以上，使用集群机器访问traefik ingress可以不用加入域名解析，若集群外机器访问则需要加入本地hosts&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ cat /etc/hosts   #nodeIP随便绑定，DaemonSet模式，后续也会将nodeip负载起来
-10.10.10.132 traefik-nginx.shinezone.com
-10.10.10.131 traefik-apache.shinezone.com
+10.10.10.132 traefik-nginx.your_domain
+10.10.10.131 traefik-apache.your_domain
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;http://172.16.0.101:8080/k8s/images/nginx.png&quot; alt=&quot;nginx&quot;&gt;&lt;/p&gt;
 
@@ -2627,7 +2627,7 @@ kube-system   traefik-ingress-service   NodePort    10.254.205.215   &amp;lt;non
 
 &lt;p&gt;初次访问，可以看到dashboard什么都没，因为我们还没配置规则，下一步进行安装UI界面&lt;/p&gt;
 
-&lt;p&gt;创建之前，我这修改了yaml中，host字段域名：&lt;code&gt;host: traefik-ui.shinezone.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建之前，我这修改了yaml中，host字段域名：&lt;code&gt;host: traefik-ui.your_domain&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;ui.yaml&lt;/strong&gt;文件内容&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;---
@@ -2651,7 +2651,7 @@ metadata:
   namespace: kube-system
 spec:
   rules:
-  - host: traefik-ui.shinezone.com
+  - host: traefik-ui.your_domain
     http:
       paths:
       - path: /
@@ -2668,12 +2668,12 @@ kube-system   traefik-web-ui            ClusterIP   10.254.163.57    &amp;lt;non
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可以看到这个启动是很快的，这时候我们饭回来看我们&lt;code&gt;http://10.10.10.130:32719/dashboard/&lt;/code&gt;界面&lt;/p&gt;
 
-&lt;p&gt;如下图，可以看到没有刷新，用户无感知的就直接识别到了&lt;code&gt;host: traefik-ui.shinezone.com&lt;/code&gt; &lt;img src=&quot;http://172.16.0.101:8080/k8s/images/traefik-ui.png&quot; alt=&quot;traefik-ui&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如下图，可以看到没有刷新，用户无感知的就直接识别到了&lt;code&gt;host: traefik-ui.your_domain&lt;/code&gt; &lt;img src=&quot;http://172.16.0.101:8080/k8s/images/traefik-ui.png&quot; alt=&quot;traefik-ui&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;traetfik-web-ui测试&lt;/p&gt;
 
 &lt;p&gt;上文中创建ui.yaml配置文件，里面有一段是这样子的&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  - host: traefik-ui.shinezone.com
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  - host: traefik-ui.your_domain
     http:
       paths:
       - path: /
@@ -2689,18 +2689,18 @@ kube-system   traefik-web-ui            ClusterIP   10.254.163.57    &amp;lt;non
 
 &lt;p&gt;&lt;img src=&quot;C:UsersAdministratorDropbox%E8%BF%90%E7%BB%B4%E6%9C%8D%E5%8A%A1kuberneteshttp://172.16.0.101:8080/k8s/imagestraefik_wrr.png&quot; alt=&quot;traefik_wrr&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;最后，说了上面那么多的实现方式，也讲了那么多用户无感知，肯定是要测试的，记得上问中有说到我这个&lt;code&gt;http://traefik-ui.shinezone.com&lt;/code&gt; 这个域名对应的&lt;code&gt;ServerName&lt;/code&gt;是&lt;code&gt;traefik-web-ui&lt;/code&gt;可以通过&lt;code&gt;kubectl get svc  --all-namespaces  |grep traefik-web-ui&lt;/code&gt;查看到，&lt;code&gt;traefik-web-ui&lt;/code&gt;Service就是Traefik的UI&lt;/p&gt;
+&lt;p&gt;最后，说了上面那么多的实现方式，也讲了那么多用户无感知，肯定是要测试的，记得上问中有说到我这个&lt;code&gt;http://traefik-ui.your_domain&lt;/code&gt; 这个域名对应的&lt;code&gt;ServerName&lt;/code&gt;是&lt;code&gt;traefik-web-ui&lt;/code&gt;可以通过&lt;code&gt;kubectl get svc  --all-namespaces  |grep traefik-web-ui&lt;/code&gt;查看到，&lt;code&gt;traefik-web-ui&lt;/code&gt;Service就是Traefik的UI&lt;/p&gt;
 
 &lt;p&gt;接下来我们来访问下这个域名，因为外层没有DNS，我测试机器先绑定本地&lt;code&gt;/etc/hosts&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;注意：这里因为traefik已经部署到了三台机器上，意思是本地hosts随意写一个nodeip都可以访问到&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Linux实例，Windows本地hosts写法一样
 $ cat /etc/hosts
-10.10.10.130 traefik-ui.shinezone.com
-#或者 10.10.10.131 traefik-ui.shinezone.com
-#或者 10.10.10.132 traefik-ui.shinezone.com
+10.10.10.130 traefik-ui.your_domain
+#或者 10.10.10.131 traefik-ui.your_domain
+#或者 10.10.10.132 traefik-ui.your_domain
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;访问域名+NodePort：&lt;code&gt;http://traefik-ui.shinezone.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;访问域名+NodePort：&lt;code&gt;http://traefik-ui.your_domain&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://172.16.0.101:8080/k8s/images/traefik-shinezone.png&quot; alt=&quot;traefik-shinezone&quot;&gt;&lt;/p&gt;
 
@@ -2725,7 +2725,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: kubernetes-ui.shinezone.com
+  - host: kubernetes-ui.your_domain
     http:
       paths:
       - path: /  
@@ -2739,15 +2739,15 @@ spec:
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ kubectl create -f  kubernetes-dashboard-traefik.yaml
 $ kubectl get ingress --all-namespaces
 NAMESPACE     NAME                           HOSTS                         ADDRESS   PORTS     AGE
-kube-system   kubernetes-dashboard-traefik   kubernetes-ui.shinezone.com             80        9m
-kube-system   traefik-web-ui                 traefik-ui.shinezone.com                80        3h
+kube-system   kubernetes-dashboard-traefik   kubernetes-ui.your_domain             80        9m
+kube-system   traefik-web-ui                 traefik-ui.your_domain                80        3h
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;4.绑定hosts域名，测试&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ cat /etc/hosts
-10.10.10.132 traefik-ui.shinezone.com
-10.10.10.130 kubernetes-ui.shinezone.com
+10.10.10.132 traefik-ui.your_domain
+10.10.10.130 kubernetes-ui.your_domain
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可以看到traefik ingress快速展示了出来&lt;img src=&quot;http://172.16.0.101:8080/k8s/images/k8s-traefik.png&quot; alt=&quot;k8s-traefik&quot;&gt;&lt;/p&gt;
 
@@ -2755,7 +2755,7 @@ kube-system   traefik-web-ui                 traefik-ui.shinezone.com           
 
 &lt;p&gt;注：这次我们配置文件转发的时候只转发到&lt;code&gt;/&lt;/code&gt;下，所以说访问的时候要加上全路径：&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;https://kubernetes-ui.shinezone.com:6443/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://kubernetes-ui.your_domain:6443/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/&lt;/code&gt; &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://172.16.0.101:8080/k8s/images/k8s-ui.png&quot; alt=&quot;k8s-ui&quot;&gt;&lt;/p&gt;
 
@@ -2763,7 +2763,7 @@ kube-system   traefik-web-ui                 traefik-ui.shinezone.com           
 &lt;li&gt;5.上面我们可以看到traefik ingress看到k8s-ui只有一个副本，那就是我们只能通过一台node机器去访问，如果绑定到别的机器上面肯定是访问不到的，这面我们测试下，修改本地hosts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ cat /ets/hosts  #把130改成131 访问测试
-10.10.10.131 kubernetes-ui.shinezone.com
+10.10.10.131 kubernetes-ui.your_domain
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这里看到不能访问是正常的（想要每个node都访问就必须将副本增加，让之分布到每个node节点）&lt;img src=&quot;http://172.16.0.101:8080/k8s/images/error_k8s-ui.png&quot; alt=&quot;error_k8s-ui&quot;&gt;&lt;/p&gt;
 
@@ -3393,7 +3393,7 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: harbor.shinezone.com/shinezonetest/grafana:1.0
+          image: harbor.your_domain/shinezonetest/grafana:1.0
           env:
             - name: GF_AUTH_BASIC_ENABLED
               value: &quot;true&quot;

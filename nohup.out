@@ -4653,3 +4653,46 @@ RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/D
 [33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
                     ...done in 0.561696311 seconds.
 
+Configuration file: /data1/yanghongfei.github.io/_config.yml
+[33m       Deprecation: The 'gems' configuration option has been renamed to 'plugins'. Please update your config file accordingly.[0m
+            Source: /data1/yanghongfei.github.io
+       Destination: /data1/yanghongfei.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 3650): Unexpected character $ in "{{$labels.instance}}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 3651): Unexpected character $ in "{{$labels.instance}}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 3651): Unexpected character $ in "{{ $value }}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    done in 0.458 seconds.
+RubyDep: WARNING: Your Ruby is outdated/buggy.
+RubyDep: WARNING: Your Ruby is: 2.3.0 (buggy). Recommendation: upgrade to 2.3.1.
+RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/Disabling-warnings )
+ Auto-regeneration: enabled for '/data1/yanghongfei.github.io'
+    Server address: http://172.16.0.101:4000/
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2018-06-23 14:14:16
+                    _posts/2018-06-16-Kubernetes.markdown
+[33m    Liquid Warning: Liquid syntax error (line 58): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 133): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/keynote.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 3650): Unexpected character $ in "{{$labels.instance}}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 3651): Unexpected character $ in "{{$labels.instance}}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 3651): Unexpected character $ in "{{ $value }}" in /data1/yanghongfei.github.io/_posts/2018-06-16-Kubernetes.markdown[0m
+[33m    Liquid Warning: Liquid syntax error (line 50): Unexpected character & in "site.duoshuo_share && site.duoshuo_username" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 125): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/post.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+[33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.222997574 seconds.
+
