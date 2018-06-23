@@ -152,97 +152,47 @@
                 col-xs-12
                 post-container
             ">
-    			<!-- Language Selector -->
-<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英语 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    <blockquote>
-    这个人很懒，什么都懒得写。。。
-    </blockquote>
-
-    <p style="text-align:right;">
-        —— <a href="http://www.cnblogs.com/yangxiaofei">您也可以点击这里查看之前的博客</a>
-    </p>
-
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    <blockquote>
-        Designer or Engineer, things in between.
-    </blockquote>
-
-    <p>
-        Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it.
-    </p>
-
-    <p>
-    If you want to live your life in a creative way, as an artist, you have to not look back too much. You have to be willing to take whatever you’ve done and whoever you were and throw them away.
-    </p>
-
-    <p style="text-align:right;">
-    -- Steve Jobs
-    </p>
-
-</div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    function onLanChange(index){
-        if(index == 0){
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }else{
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        }
-    }
-    onLanChange(0);
-</script>
-
-
-
-
-<!-- 多说评论框 start -->
-<div class="comment">
-    <div class="ds-thread"
+    			<div class="en post-container">
     
-        data-thread-key="yangxiaofei/about"
-    
+    <h4 id="about-me">About Me</h4>
 
-    data-title="About"
-    data-url="http://172.16.0.101:4000/about/"></div>
+<blockquote>
+<p>First of all thank Hux open source template, writing a blog is just a matter of commemoration, recording content, and looking back at what has changed. If there is content infringement, please contact the author to delete it.About Me,a keen on technology, the so-called hard-to-run maintenance engineers,When you know nothing about the world, there will be surprises!</p>
+</blockquote>
+
+<ul>
+<li><p>About Work</p>
+
+<ul>
+<li><a href="http://htuidc.com">HTU</a></li>
+<li><a href="http://www.shinezone.com">Shinezone</a></li>
+</ul></li>
+<li><p>A Simeple info</p>
+
+<ul>
+<li>Name,Fred Yang(YangHongFei)</li>
+<li>Age, 21，Now(2018)</li>
+<li>From,ShangQiu Henan</li>
+<li>Now, Pudong Shanghai</li>
+<li>Wok in <a href="http://www.shinezone.com">Shinezone Network Co., Ltd.</a></li>
+<li>Operation and Maintenance Engineer</li>
+<li>Here you can see before <a href="http://www.cnblogs.com/yangxiaofei">My Blog</a></li>
+</ul></li>
+</ul>
+
+<p><strong>About images</strong></p>
+
+<blockquote>
+<p>About Me  my avatar is my sister, who is 12 years younger than me and hopes she will be happy every day.</p>
+</blockquote>
+
+<p>​       <strong>About background</strong></p>
+
+<blockquote>
+<p>The background picture is the photo of my meeting of my at the time of my work in 2018, only as a reservation, if infringement, please contact the author to delete.</p>
+</blockquote>
+
 </div>
-<!-- 多说评论框 end -->
-
-<!-- Duoshuo hacking -->
-<input id="dsUser" type="hidden" value="yangxiaofei"  />
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = document.getElementById('dsUser').value;
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-
-
-
 
 
     		</div>
@@ -278,7 +228,7 @@
                     <hr><h5><a href="/about/">ABOUT ME</a></h5>
                     <div class="short-about">
                         
-                            <img src="img/yangxiaofei.jpg" />
+                            <img src="img/Avatar.png" />
                         
                         
                             <p>一无所知的世界走下去才会有惊喜。。</p>
