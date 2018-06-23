@@ -352,7 +352,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 
 <p><code>etcd</code>证书为etcd集群使用。</p>
 
-<p><code>shinezone</code>证书为Harbor使用。</p>
+<p><code>your_domain</code>证书为Harbor使用。</p>
 </blockquote>
 
 <p>|      CA&amp;Key       | etcd | api-server | proxy | kebectl | Calico | harbor |
@@ -363,8 +363,8 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 |      ca.pem       |  √   |            |       |         |        |        |
 |     etcd.csr      |  √   |            |       |         |        |        |
 |   etcd-key.pem    |  √   |            |       |         |        |        |
-| shinezone.com.crt |      |            |       |         |        |   √    |
-| shinezone.com.key |      |            |       |         |        |   √    |</p>
+| your<em>domain.com.crt |      |            |       |         |        |   √    |
+| your</em>domain.com.key |      |            |       |         |        |   √    |</p>
 
 <h4 id="5-2-cfssl">5.2 安装CFSSL</h4>
 <div class="highlight"><pre><code class="language-" data-lang="">wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
@@ -732,7 +732,7 @@ https://172.16.1.11:2379 is healthy: successfully committed proposal: took <span
 </blockquote>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell">// 所有机器执行
 <span class="nv">$ </span><span class="nb">sed</span> <span class="nt">-i</span> s#systemd#cgroupfs#g /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Environment="KUBELET_EXTRA_ARGS=--v=2 --fail-swap-on=false --pod-infra-container-image=harbor.shinezone.com/shinezonetest/pause-amd64:3.1"'</span> <span class="o">&gt;&gt;</span>  /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'Environment="KUBELET_EXTRA_ARGS=--v=2 --fail-swap-on=false --pod-infra-container-image=harbor.your_domain.com/your_domaintest/pause-amd64:3.1"'</span> <span class="o">&gt;&gt;</span>  /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 </code></pre></div>
 <h4 id="7-2">7.2 加载配置文件</h4>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>systemctl daemon-reload
@@ -902,7 +902,7 @@ apiServerExtraArgs:
   basic-auth-file: /etc/kubernetes/pki/basic_auth_file
 featureGates:
   CoreDNS: true
-imageRepository: "harbor.shinezone.com/shinezonetest"
+imageRepository: "harbor.your_domain.com/your_domaintest"
 </span><span class="no">EOF
 </span></code></pre></div>
 <p>字段说明：</p>
@@ -983,9 +983,9 @@ as root:
 <span class="c">#修改calico.yaml里image镜像路径部分,已推内网harbor</span>
 <span class="nv">$ </span><span class="nb">grep </span>image calico.yaml 
 
-        - image: harbor.shinezone.com/shinezonetest/calico-typha:1.0
-          image: harbor.shinezone.com/shinezonetest/calico-node:1.0
-          image: harbor.shinezone.com/shinezonetest/calico-cni:1.0
+        - image: harbor.your_domain.com/your_domaintest/calico-typha:1.0
+          image: harbor.your_domain.com/your_domaintest/calico-node:1.0
+          image: harbor.your_domain.com/your_domaintest/calico-cni:1.0
 
 <span class="nv">$ </span>kubectl apply <span class="nt">-f</span> rbac-kdd.yaml
 <span class="nv">$ </span>kubectl apply <span class="nt">-f</span> calico.yaml
@@ -1156,7 +1156,7 @@ kube-system   kubernetes-dashboard-76666c8d7-x55x9              1/1       Runnin
     <span class="na">spec</span><span class="pi">:</span>
       <span class="na">containers</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">kubernetes-dashboard</span>
-        <span class="na">image</span><span class="pi">:</span> <span class="s">harbor.shinezone.com/shinezonetest/kubernetes-dashboard-amd64:v1.8.3</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">harbor.your_domain.com/your_domaintest/kubernetes-dashboard-amd64:v1.8.3</span>
         <span class="na">ports</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="s">8443</span>
           <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span>
@@ -1310,7 +1310,7 @@ kube-system   kubernetes-dashboard-76666c8d7-x55x9              1/1       Runnin
     <span class="s">kubernetes.io/ingress.class</span><span class="pi">:</span> <span class="s">traefik</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">rules</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">host</span><span class="pi">:</span> <span class="s">k8s-traefik.shinezone.com</span>
+  <span class="pi">-</span> <span class="na">host</span><span class="pi">:</span> <span class="s">k8s-traefik.your_domain.com</span>
     <span class="na">http</span><span class="pi">:</span>
       <span class="na">paths</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">backend</span><span class="pi">:</span>
@@ -1416,11 +1416,11 @@ kube-system   kubernetes-dashboard-76666c8d7-x55x9              1/1       Runnin
   <span class="s">address = ":443"</span>
     <span class="s">[entryPoints.https.tls]</span>
       <span class="s">[[entryPoints.https.tls.certificates]]</span>
-      <span class="s">certFile = "/root/ssl/shinezone.com.crt"</span>
-      <span class="s">keyFile = "/root/ssl/shinezone.com.key"</span>
+      <span class="s">certFile = "/root/ssl/your_domain.com.crt"</span>
+      <span class="s">keyFile = "/root/ssl/your_domain.com.key"</span>
 <span class="s">EOF</span>
 </code></pre></div><div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>kubectl create configmap traefik-conf <span class="nt">--from-file</span><span class="o">=</span>traefik.toml    //生成配置字典
-<span class="nv">$ </span>kubectl create secret generic traefik-cert <span class="nt">--from-file</span><span class="o">=</span>/etc/kubernetes/ssl/shinezone.com.key <span class="nt">--from-file</span><span class="o">=</span>/etc/kubernetes/ssl/shinezone.com.crt                    //生成保密字典
+<span class="nv">$ </span>kubectl create secret generic traefik-cert <span class="nt">--from-file</span><span class="o">=</span>/etc/kubernetes/ssl/your_domain.com.key <span class="nt">--from-file</span><span class="o">=</span>/etc/kubernetes/ssl/your_domain.com.crt                    //生成保密字典
 </code></pre></div>
 <h4 id="12-2-traefik">12.2 部署Traefik</h4>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>kubectl create <span class="nt">-f</span> traefik-rbac.yaml 
@@ -1504,7 +1504,7 @@ kube-system   kubernetes-dashboard-76666c8d7-x55x9              1/1       Runnin
   <span class="na">basic-auth-file</span><span class="pi">:</span> <span class="s">/etc/kubernetes/pki/basic_auth_file</span>
 <span class="na">featureGates</span><span class="pi">:</span>
   <span class="na">CoreDNS</span><span class="pi">:</span> <span class="no">true</span>
-<span class="na">imageRepository</span><span class="pi">:</span> <span class="s2">"</span><span class="s">harbor.shinezone.com/shinezonetest"</span>
+<span class="na">imageRepository</span><span class="pi">:</span> <span class="s2">"</span><span class="s">harbor.your_domain.com/your_domaintest"</span>
 </code></pre></div>
 <blockquote>
 <p>打开kubernetes-dashboard.yaml中的  “- --authentication-mode=basic ”注释</p>
