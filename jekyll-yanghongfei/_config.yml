@@ -1,0 +1,42 @@
+# Site settings
+title: Hi, I'm Yangxiaofei
+description: 'When you know nothing about the world, there will be surprises!'
+url: http://www.opendevops.cn/''
+baseurl: '/yanghongfei'
+
+author:
+  name: 'yanghongfei'
+  email: yanghongfei0911@gmail.com
+  zhihu_username:     FredYangxiaofei
+  twitter_username: FredYanghongfei
+  facebook_username: FredYangxiaofei
+  github_username:  yanghongfei
+  #linkedin_username:  feed
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

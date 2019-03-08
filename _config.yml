@@ -5,7 +5,7 @@ header-img: img/home01.jpg
 email: yanghongfei0911@gmail.com
 description: ""
 keyword: ""
-url: "http://yangxiaofei.me"              # your host, for absolute URL
+url: "https://yanghongfei.github.io/"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 #baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -63,7 +63,7 @@ duoshuo_share: true                     # set to false if you want to use Commen
 ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: yangxiaofei.me
+ga_domain: yanghongfei.github.io
 
 
 
@@ -82,16 +82,16 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Yangxiaofei Blog",
-        href: "http://yangxiaofei.me"
+        title: "CloudOpenDevOps",
+        href: "https://github.com/opendevops-cn/opendevops"
     },{
-        title: "Foo",
-        href: "#"
+        title: "Kubernetes Deploy",
+        href: "https://github.com/yanghongfei/Kubernetes"
     },{
-        title: "Bar",
-        href: "#"
+        title: "My Old Bolg",
+        href: "https://www.cnblogs.com/yangxiaofei"
     },{
-        title: "Example Friends",
+        title: "#",
         href: "#"
     },{
         title: "It helps SEO",
