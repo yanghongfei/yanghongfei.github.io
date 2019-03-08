@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      "Kubernetes"
+title:      "Promethues监控ETCD集群"
 subtitle:   " \"Promethues监控外接ETCD集群\""
 date:       2019-03-08
 author:     "Yangxiaofei"
-header-img: "img/etcd_graph.png"
+header-img: "img/grafana_etcd.png"
 tags:
     - Kubernetes
 ---
