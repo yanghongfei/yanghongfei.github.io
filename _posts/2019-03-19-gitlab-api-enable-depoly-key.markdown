@@ -4,7 +4,7 @@ title:      "GitLab API Enable Depoly Keys For Project"
 subtitle:   " \"GitLab API开启Depoly Key\""
 date:       2019-03-19
 author:     "Yangxiaofei"
-header-img: "img/gitlab.png"
+header-img: "img/gitlab.jpg"
 tags:
     - GitLab
 ---
@@ -41,12 +41,12 @@ tags:
 ![image](https://ws1.sinaimg.cn/large/005X1wn0gy1g1892l4gsuj31gj0hcac6.jpg)
 
 - API使用
-```
-# get就可以列出所有的keys
-
+```shell
+#get就可以列出所有的keys
 GET /deploy_keys
 curl --header "PRIVATE-TOKEN: <your_access_token>" "https://gitlab.example.com/api/v4/deploy_keys"
 ```
+
 ![image](https://ws1.sinaimg.cn/large/005X1wn0gy1g1892l68t0j31gy054gpw.jpg)
 
 
