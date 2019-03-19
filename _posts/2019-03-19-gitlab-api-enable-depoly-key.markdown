@@ -36,11 +36,13 @@ tags:
 > 既然要用APi，认证信息必然不可少。
 
 - 我们登陆GitLab 找到账户信息，生成一个Token，登陆进入Profile Setting — Account
+
 ![image](https://ws1.sinaimg.cn/large/005X1wn0gy1g1892l6ru6j31gb0nrju1.jpg)
 
 ![image](https://ws1.sinaimg.cn/large/005X1wn0gy1g1892l4gsuj31gj0hcac6.jpg)
 
 - API使用
+
 ```shell
 #get就可以列出所有的keys
 GET /deploy_keys
@@ -51,11 +53,13 @@ curl --header "PRIVATE-TOKEN: <your_access_token>" "https://gitlab.example.com/a
 
 
 #### 简单了解下API用法，直接上我们用到的`Enable Depoly key`
+
 官方链接：https://docs.gitlab.com/ee/api/deploy_keys.html#enable-a-deploy-key
 ![](https://ws1.sinaimg.cn/large/005X1wn0gy1g189dz1rm7j30vr0hodgt.jpg)
 
 以上，开启需要知道你的Depoly KeysID和项目ID
 ```shell
+
 curl --request POST --header "PRIVATE-TOKEN: <your_access_token>" https://gitlab.example.com/api/v4/projects/5/deploy_keys/13/enable
 ```
 以下是我的python脚本实例，仅供参考
