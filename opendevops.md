@@ -6,13 +6,7 @@ header-img: "img/open-bg.jpg"
 ---
 
 ### OpenDevOps
-> 如果喜欢此项目，希望能我们项目点个Start
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=opendevops-cn&repo=opendevops&type=star&count=true" >
-                    </iframe>
-让我们为贡献者加油，为运维干杯！
+> 如果你喜欢我们的项目，希望你能为我们项目点个Start,让我们为贡献者加油，为运维干杯！
 
 - [Demo](https://demo.opendevops.cn/login)
 - [Docs](http://docs.opendevops.cn/zh/latest/)
