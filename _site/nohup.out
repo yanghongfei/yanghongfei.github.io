@@ -4711,3 +4711,5 @@ RubyDep: WARNING: (To disable warnings, see:http://github.com/e2/ruby_dep/wiki/D
 [33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
 [33m    Liquid Warning: Liquid syntax error (line 38): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
 [33m    Liquid Warning: Liquid syntax error (line 87): Unexpected character { in "tag[1].size > {{site.featured-condition-size}}" in /_layouts/page.html[0m
+                    ...done in 0.215831897 seconds.
+

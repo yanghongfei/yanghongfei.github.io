@@ -77,12 +77,13 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <li>
-                        <a href="http://www.opendevops.cn/">OpenDevOps</a>
-                    </li>
                     
                     <li>
                         <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/opendevops/">OpenDevOps</a>
                     </li>
                     
                     <li>
@@ -156,6 +157,201 @@
                 post-container
             ">
     			
+<div class="post-preview">
+    <a href="/2019/03/19/gitlab-api-enable-depoly-key/">
+        <h2 class="post-title">
+            GitLab API Enable Depoly Keys For Project
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "GitLab API开启Depoly Key"
+        </h3>
+        
+        <div class="post-content-preview">
+            使用GitLab API为指定项目开启DepolyKeys
+
+背景
+
+
+为什么使用DepolyKeys?
+
+
+1. 安全
+2. 不需要像SSH Keys一样开通用户
+3. Depoly Keys是全局的，每个项目都可以enable
+4. Depoly Keys不需要担心用户离职删除账户问题
+5. Depoly Keys 只有git pull的权限，没有git push权限，用于发布足够安全
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 19, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/12/k8s-prometheus-operator/">
+        <h2 class="post-title">
+            Prometheus-Operator部署参考
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "K8S Prometheus-Operator部署及自定义监控"
+        </h3>
+        
+        <div class="post-content-preview">
+            13. Prometheus-Operator
+
+
+Prometheus Operator介绍
+官网：https://github.com/coreos/prometheus-operator
+参考文档：http://www.servicemesher.com/blog/prometheus-operator-manual/
+
+
+13.1 快速开始
+
+
+官方把所有文件都放在一起，这里我分类下...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 12, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/12/k8s-ingress-traefik/">
+        <h2 class="post-title">
+            K8s Ingress部署
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "Ingres Traefik https部署介绍"
+        </h3>
+        
+        <div class="post-content-preview">
+            部署Traefik Ingress
+
+
+Traefik 使用DS方式进行部署
+
+$ cat &lt;&lt;EOF &gt; traefik-rbac.yaml
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: traefik-ingress-controller
+rul...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 12, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/12/k8s-ha/">
+        <h2 class="post-title">
+            基于Kubeadm部署Kubernetes1.13.3 HA
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "K8S高可用集群，外接ETCD集群"
+        </h3>
+        
+        <div class="post-content-preview">
+            基于Kubeadm部署Kubernetes1.13.3 HA 高可用集群
+
+
+K8S 1.13版本中默认：
+
+DNS：CoreDNS
+
+Kube-proxy： IPVS模板    #非iptables
+
+Network： Calico
+
+注意：
+
+默认kubeadm一键部署etcd非集群高可用，
+
+本示例使用外接etcd实现高可用集群，Master APIserver使用Keeplived；...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 12, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/08/readthedocs/">
+        <h2 class="post-title">
+            ReadtheDocs项目写作文档
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "Sphinx + GitHub + ReadtheDocs项目写作文档"
+        </h3>
+        
+        <div class="post-content-preview">
+            Sphinx + GitHub + ReadtheDocs项目写作文档
+
+
+Demo地址：https://yanghongfei.readthedocs.io
+
+
+
+Read the Docs是一个在线文档托管服务， 你可以从各种版本控制系统中导入文档，如果你使用webhooks， 那么每次提交代码后可以自动构建并上传至readthedocs网站，非常方便。
+
+
+电子书写作方式
+
+
+Sphi...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 8, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/08/prometheus-monitoring-etcd/">
+        <h2 class="post-title">
+            Promethues监控ETCD集群
+        </h2>
+        
+        <h3 class="post-subtitle">
+             "Promethues监控外接ETCD集群"
+        </h3>
+        
+        <div class="post-content-preview">
+            Promethues监控外接ETCD集群
+
+
+Q：为什么要监控ETCD？
+A： 因为K8S数据都是存在ETCD里面，ETCD非常重要！
+
+
+
+因为默认Prometheus-operator是没有收集ETCD里面的数据的，因为ETCD比较重要，我们ETCD使用外接二进制形式部署高可用，因此这里ETCD需要单独配置serviceMonitor和services
+
+
+
+参考文档：https://w...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Yangxiaofei on March 8, 2019
+    </p>
+</div>
+<hr>
+
 <div class="post-preview">
     <a href="/2018/06/16/Kubernetes/">
         <h2 class="post-title">
@@ -237,32 +433,6 @@
 </div>
 <hr>
 
-<div class="post-preview">
-    <a href="/2015/07/09/js-module-7day/">
-        <h2 class="post-title">
-            Template Example Post using Keynote Layout
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Template: JavaScript Modularization Journey
-        </h3>
-        
-        <div class="post-content-preview">
-            
-下滑这里查看更多内容
-
-
-7月9日，我在公司内部进行了名为「JavaScript 模块化七日谈」分享，并将该 Slides 分享到了微博上。出乎意料地，这篇微博先后被 @JS小组 @尤小右 @寸志 等近 200 人转发，阅读达到 10w，获得了还不错的评价。
-
-于是，我决定将它重新发到我的博客上，并为它专门制作了适用于 Keynote 展示文稿的新布局。它能自动根据屏幕大小/旋转以一定比例...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Template on July 9, 2015
-    </p>
-</div>
-<hr>
-
 
 <!-- Pager -->
 
@@ -284,11 +454,13 @@
                     <div class="tags">
                         
                             
-                        
-                            
-                                <a href="/tags/#Kubernetes" title="Kubernetes" rel="3">
+                                <a href="/tags/#Kubernetes" title="Kubernetes" rel="6">
                                     Kubernetes
                                 </a>
+                            
+                        
+                            
+                        
                             
                         
                     </div>
@@ -358,13 +530,13 @@
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     
-                        <li><a href="http://yangxiaofei.me">Yangxiaofei Blog</a></li>
+                        <li><a href="https://github.com/opendevops-cn/opendevops">CloudOpenDevOps</a></li>
                     
-                        <li><a href="#">Foo</a></li>
+                        <li><a href="https://github.com/yanghongfei/Kubernetes">Kubernetes Deploy</a></li>
                     
-                        <li><a href="#">Bar</a></li>
+                        <li><a href="https://www.cnblogs.com/yangxiaofei">My Old Bolg</a></li>
                     
-                        <li><a href="#">Example Friends</a></li>
+                        <li><a href="#">#</a></li>
                     
                         <li><a href="#">It helps SEO</a></li>
                     
@@ -430,9 +602,10 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Hi, I'm Yangxiaofei 2018
+                    Copyright &copy; Hi, I'm Yangxiaofei 2019
                     <br>
-                    Theme by <a href="http://yangxiaofei.me">Hux</a> |
+		   <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                    by <a href="http://yanghongfei.me">YangHongFei</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="91px" height="20px"
@@ -444,6 +617,7 @@
     </div>
 </footer>
 
+
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
 
@@ -453,6 +627,7 @@
 <!-- Custom Theme JavaScript -->
 <script src="/js/hux-blog.min.js "></script>
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!-- async load function -->
 <script>
@@ -513,7 +688,7 @@
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'yangxiaofei.me';
+    var _gaDomain = 'yanghongfei.github.io';
 
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
