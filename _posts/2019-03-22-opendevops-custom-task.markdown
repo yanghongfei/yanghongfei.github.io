@@ -64,7 +64,7 @@ tags:
 
 - 登陆成功如下图：
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bnhte39cj316d0neq4h.jpg)
+![](img/005X1wn0gy1g1bnhte39cj316d0neq4h.jpg)
 
 
 
@@ -74,17 +74,17 @@ tags:
 
 第一次使用需要获取下Key，直接GET 任务接口就可以，成功如下图
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bnkch2pbj31630huwf3.jpg)
+![](img/005X1wn0gy1g1bnkch2pbj31630huwf3.jpg)
 
 ##### 登陆平台，创建模板
 
 - 添加你的脚本命令
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bno2m6n6j31g70os0wj.jpg)
+![](img/005X1wn0gy1g1bno2m6n6j31g70os0wj.jpg)
 
 - 创建执行命令
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bnpq9db3j31gg0lu76n.jpg)
+![](img/005X1wn0gy1g1bnpq9db3j31gg0lu76n.jpg)
 
 - 创建模板并进行排版
 
@@ -94,7 +94,7 @@ tags:
 > 2. 模板的ID，一会POSTMAN模拟提交的时候要用到
 > 3. 参数， 里面的参数都是你的脚本逻辑，需要传哪些参数自己定义，这些参数统一在args字典里面传过来
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bns609akj311z0iajti.jpg)
+![](img/005X1wn0gy1g1bns609akj311z0iajti.jpg)
 
 
 
@@ -147,13 +147,13 @@ tags:
 
 - 订单参数详情
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bob82jtij31ey0fqta6.jpg)
+![](img/005X1wn0gy1g1bob82jtij31ey0fqta6.jpg)
 
 - 订单状态
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bob82p05j310e0kbgne.jpg)
+![](img/005X1wn0gy1g1bob82p05j310e0kbgne.jpg)
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1bob82rnqj310p0jxjt6.jpg)
+![](img/005X1wn0gy1g1bob82rnqj310p0jxjt6.jpg)
 
 
 以上，只是为AWS购买资源组简单说明，你可以根据你自己的需求任意排版，不限语言，不限制主机，可执行，可登陆即可，已任务形式进行，模板有权限控制，任务有权限控制，操作记录，历史记录，定时执行，手工干预，这里任务系统包含了很多组件等待你的体验，若你也喜欢我们的项目，请你给项目点一个Star，让我们给贡献者点动力。
@@ -162,6 +162,6 @@ tags:
 
 以下是我们目前已完成模块和用户使用交流群，欢迎你的加入。
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1boj8xgupj31gp0nrgqe.jpg)
+![](img/005X1wn0gy1g1boj8xgupj31gp0nrgqe.jpg)
 
 

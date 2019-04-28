@@ -47,7 +47,7 @@ tags:
 - 记下模板ID
 - 模板执行顺序自行排版
 - [opendevops模板使用说明](http://docs.opendevops.cn/zh/latest/task_template.html)
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1ewg3sgrrj31gk0n7n0o.jpg)
+![](img/005X1wn0gy1g1ewg3sgrrj31gk0n7n0o.jpg)
 
 
 **配置钩子**
@@ -176,5 +176,5 @@ git push -u origin release-dbtt-server-20190320-02  #把tag推送上去
 
 最终的结果
 
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g1exnc0cv9j30uc0iw75r.jpg)
+![](img/005X1wn0gy1g1exnc0cv9j30uc0iw75r.jpg)
 
