@@ -1,500 +1,522 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>About - 毕竟我是杨小飞i | Yangxiaofei Blog</title>
-
-    <link rel="canonical" href="http://172.16.0.101:4000/about/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
-
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Hi, I'm Yangxiaofei</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/opendevops/">OpenDevOps</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/">Tags</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hi, I'm Yangxiaofei <br>I work in ShineZone.</br></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-    			<div class="en post-container">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>About &mdash; Hi, I'm Yangxiaofei</title>
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/components/collection.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/globals/common.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
     
-    <h4 id="about-me">About Me</h4>
 
-<blockquote>
-<p>First of all thank Hux open source template, writing a blog is just a matter of commemoration, recording content, and looking back at what has changed. If there is content infringement, please contact the author to delete it.About Me,a keen on technology, the so-called hard-to-run maintenance engineers,When you know nothing about the world, there will be surprises!</p>
-</blockquote>
+    
+    <link rel="canonical" href="http://172.16.0.101:4000/about/">
+    <link rel="alternate" type="application/atom+xml" title="Hi, I'm Yangxiaofei" href="http://172.16.0.101:4000/feed.xml">
+    <link rel="shortcut icon" href="http://172.16.0.101:4000/favicon.ico">
+    
+    <meta property="og:title" content="About">
+      
+    <meta name="keywords" content="I'm Yangxiaofei">
+    <meta name="og:keywords" content="I'm Yangxiaofei">
+      
+    <meta name="description" content="一无所知的世界走下去才会有惊喜！">
+    <meta name="og:description" content="一无所知的世界走下去才会有惊喜！">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="http://172.16.0.101:4000/about/">
+    <meta property="og:site_name" content="Hi, I'm Yangxiaofei">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <script src="http://172.16.0.101:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://172.16.0.101:4000/assets/js/jquery-ui.js"></script>
+    <script src="http://172.16.0.101:4000/assets/js/main.js"></script>
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="http://172.16.0.101:4000/" title="Hi, I'm Yangxiaofei"><span class="octicon octicon-mark-github"></span> Hi, I'm Yangxiaofei</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="http://172.16.0.101:4000/" class=" site-header-nav-item" target="" title="首页">首页</a>
+                
+                <a href="http://172.16.0.101:4000/categories/" class=" site-header-nav-item" target="" title="分类">分类</a>
+                
+                <a href="http://172.16.0.101:4000/wiki/" class=" site-header-nav-item" target="" title="维基">维基</a>
+                
+                <a href="http://172.16.0.101:4000/links/" class=" site-header-nav-item" target="" title="链接">链接</a>
+                
+                <a href="http://172.16.0.101:4000/about/" class=" selected  site-header-nav-item" target="" title="关于">关于</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small geopattern" data-pattern-id="About">
+    <div class="container">
+        <div class="collection-title">
+            <h1 class="collection-header">About</h1>
+            
+        </div>
+    </div>
+</section>
+<!-- / .banner -->
+ <section class="container content">
+        <div class="columns">
+            <div class="column two-thirds" >
+                <article class="article-content markdown-body">
+                    <p>Hi, I’m Yangxiaofei</p>
+
+<p>游戏行业，运维工程师</p>
+
+<p>写博客不单单是为了记录，为了资源分享</p>
+
+<p>当你返回来看的时候，你会发现这会是很有意思的一件事！</p>
+
+<h2 id="contact">Contact</h2>
 
 <ul>
-<li><p>About Work</p>
-
-<ul>
-<li><a href="http://htuidc.com">HTU</a></li>
-<li><a href="http://www.shinezone.com">Shinezone</a></li>
-</ul></li>
-<li><p>A Simeple info</p>
-
-<ul>
-<li>Name,Fred Yang(YangHongFei)</li>
-<li>Age, 21，Now(2018)</li>
-<li>From,ShangQiu Henan</li>
-<li>Now, Pudong Shanghai</li>
-<li>Wok in <a href="http://www.shinezone.com">Shinezone Network Co., Ltd.</a></li>
-<li>Operation and Maintenance Engineer</li>
-<li>Here you can see before <a href="http://www.cnblogs.com/yangxiaofei">My Blog</a></li>
-</ul></li>
+  <li>
+    <p>GitHub：<a href="https://github.com/yanghongfei">@yanghongfei</a></p>
+  </li>
+  <li>
+    <p>博客：<a href="http://yanghongfei.me">@I’m Yangxiaofei</a></p>
+  </li>
+  <li>
+    <p>知乎：<a href="https://www.zhihu.com/people/FredYangxiaofei">@FredYangxiaofei</a></p>
+  </li>
 </ul>
 
-<p><strong>About images</strong></p>
+<h2 id="about-work">About Work</h2>
+
+<ul>
+  <li><a href="http://htuidc.com">HTU</a></li>
+  <li><a href="http://www.shinezone.com">Shinezone</a></li>
+</ul>
+
+<!-- ## Skill Keywords
+
+- Linux
+- Shell
+- Python
+- Tornado
+- Vue
+- iview-admin -->
+
+<h2 id="a-simeple-info">A Simeple info</h2>
+
+<ul>
+  <li>Name,Fred Yang(YangHongFei)</li>
+  <li>From,ShangQiu Henan</li>
+  <li>Now, Pudong Shanghai</li>
+  <li>Wok in <a href="http://www.shinezone.com">Shinezone Network Co., Ltd.</a></li>
+  <li>Operation and Maintenance Engineer</li>
+  <li>Here you can see before <a href="http://www.cnblogs.com/yangxiaofei">My Blog</a></li>
+</ul>
+
+<h2 id="skill-keywords">Skill Keywords</h2>
 
 <blockquote>
-<p>About Me  my avatar is my sister, who is 12 years younger than me and hopes she will be happy every day.</p>
+  <p>平时工作中接触到的一些技术</p>
 </blockquote>
 
-<p>​       <strong>About background</strong></p>
+<h3 id="ops">OPS</h3>
+<div class="btn-inline">
 
-<blockquote>
-<p>The background picture is the photo of my meeting of my at the time of my work in 2018, only as a reservation, if infringement, please contact the author to delete.</p>
-</blockquote>
+<button class="btn btn-outline" type="button">linux</button>
+
+<button class="btn btn-outline" type="button">git</button>
+
+<button class="btn btn-outline" type="button">svn</button>
+
+<button class="btn btn-outline" type="button">zabbix</button>
+
+<button class="btn btn-outline" type="button">nginx</button>
+
+<button class="btn btn-outline" type="button">mysql</button>
+
+<button class="btn btn-outline" type="button">redis</button>
+
+<button class="btn btn-outline" type="button">php</button>
+
+<button class="btn btn-outline" type="button">SaltStack</button>
+
+<button class="btn btn-outline" type="button">Ansible</button>
+
+<button class="btn btn-outline" type="button">Docker</button>
+
+<button class="btn btn-outline" type="button">K8s</button>
+
+<button class="btn btn-outline" type="button">DNS</button>
+
+<button class="btn btn-outline" type="button">Node</button>
+
+</div>
+
+<h3 id="development">Development</h3>
+<div class="btn-inline">
+
+<button class="btn btn-outline" type="button">Linux</button>
+
+<button class="btn btn-outline" type="button">Shell</button>
+
+<button class="btn btn-outline" type="button">Python</button>
+
+<button class="btn btn-outline" type="button">Tornado</button>
+
+<button class="btn btn-outline" type="button">Vue</button>
+
+<button class="btn btn-outline" type="button">iview-admin</button>
 
 </div>
 
 
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                            
-                                <a href="/tags/#Kubernetes" title="Kubernetes" rel="6">
-                                    Kubernetes
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#GitLab" title="GitLab" rel="3">
-                                    GitLab
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                    </div>
-                </section>
-                
+                </article>
+                <div class="share">
+                    <div class="share-component"></div>
+                </div>
+                <div class="comment">
+                    
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <img src="img/Avatar.png" />
-                        
-                        
-                            <p>一无所知的世界走下去才会有惊喜。。</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/FredYangxiaofei">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="http://weibo.com/FredYangxiaofei">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.facebook.com/FredYangxiaofei">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/yanghongfei">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-                <!-- Friends Blog -->
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/about/',
+            clientID: '968bf991844521775a64',
+            clientSecret: '5129b9167f19eaf20c405e13d1ff477485ec477a',
+            repo: 'yanghongfei.github.io',
+            owner: 'yanghongfei',
+            admin: ['yanghongfei'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+                </div>
+            </div>
+            <div class="column one-third">
                 
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    
-                        <li><a href="https://github.com/opendevops-cn/opendevops">CloudOpenDevOps</a></li>
-                    
-                        <li><a href="https://github.com/yanghongfei/Kubernetes">Kubernetes Deploy</a></li>
-                    
-                        <li><a href="https://www.cnblogs.com/yangxiaofei">My Old Bolg</a></li>
-                    
-                        <li><a href="#">#</a></li>
-                    
-                        <li><a href="#">It helps SEO</a></li>
-                    
-                </ul>
-                
-    		</div>
-        
-	</div>
+<h3>Search</h3>
+<div id="site_search">
+    <input type="text" id="search_box" placeholder="Search">
 </div>
 
+<ul id="search_results"></ul>
 
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    
+<link rel="stylesheet" type="text/css" href="http://172.16.0.101:4000/assets/css/modules/sidebar-search.css">
+<script src="http://172.16.0.101:4000/assets/js/simple-jekyll-search.min.js"></script>
+<script src="http://172.16.0.101:4000/assets/js/search.js"></script>
 
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
-                    
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/FredYangxiaofei">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a target="_blank" href="http://weibo.com/FredYangxiaofei">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'http://172.16.0.101:4000/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['Welcome']
+})
+</script>
+
+                
+
+                <h3>开源一站式DevOps</h3>
 
 
-                    
-                    <li>
-                        <a target="_blank" href="https://www.facebook.com/FredYangxiaofei">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/yanghongfei">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Hi, I'm Yangxiaofei 2019
-                    <br>
-		   <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-                    by <a href="http://yanghongfei.me">YangHongFei</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=yanghongfei&repo=yanghongfei.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
+
+<a href="https://github.com/opendevops-cn/opendevops" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="opendevops">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    opendevops
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">CODO是一款为用户提供企业多混合云、一站式DevOps、自动化运维、完全开源的云管理平台、自动化运维平台</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="893 stars">
+                    <span class="octicon octicon-star"></span> 893
+                </span>
+                <span class="meta-info" title="190 forks">
+                    <span class="octicon octicon-git-branch"></span> 190
+                </span>
+                <span class="meta-info" title="Last updated：2019-07-01 09:47:31 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-07-01 09:47:31 UTC">2019-07-01</time>
+                </span>
             </div>
         </div>
     </div>
-</footer>
+</a>
+
+<a href="https://github.com/opendevops-cn/codo-admin" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="codo-admin">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    codo-admin
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">基于Tornado实现，提供Restful风格的API，提供基于RBAC的完善权限管理，可对所有用户的操作进行审计</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="41 stars">
+                    <span class="octicon octicon-star"></span> 41
+                </span>
+                <span class="meta-info" title="20 forks">
+                    <span class="octicon octicon-git-branch"></span> 20
+                </span>
+                <span class="meta-info" title="Last updated：2019-06-29 14:29:54 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-06-29 14:29:54 UTC">2019-06-29</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="https://github.com/opendevops-cn/codo-cmdb" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="codo-cmdb">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    codo-cmdb
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">基于Tornado实现的一套资产管理系统、支持AWS、阿里云、腾讯云、华为云自动拉取资产信息等</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="36 stars">
+                    <span class="octicon octicon-star"></span> 36
+                </span>
+                <span class="meta-info" title="18 forks">
+                    <span class="octicon octicon-git-branch"></span> 18
+                </span>
+                <span class="meta-info" title="Last updated：2019-07-01 08:46:54 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-07-01 08:46:54 UTC">2019-07-01</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="https://github.com/opendevops-cn/codo-tools" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="codo-tools">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    codo-tools
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">CODO运维工具支持：告警管理、项目管理、事件管理、加密解密、随机密码、提醒管理等</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="29 stars">
+                    <span class="octicon octicon-star"></span> 29
+                </span>
+                <span class="meta-info" title="11 forks">
+                    <span class="octicon octicon-git-branch"></span> 11
+                </span>
+                <span class="meta-info" title="Last updated：2019-06-25 08:09:30 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-06-25 08:09:30 UTC">2019-06-25</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="https://github.com/opendevops-cn/codo" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="codo">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    codo
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">基于Vue + Iview-Admin实现的一套后台管理系统</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="25 stars">
+                    <span class="octicon octicon-star"></span> 25
+                </span>
+                <span class="meta-info" title="17 forks">
+                    <span class="octicon octicon-git-branch"></span> 17
+                </span>
+                <span class="meta-info" title="Last updated：2019-06-20 07:58:03 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-06-20 07:58:03 UTC">2019-06-20</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a href="https://github.com/opendevops-cn/kerrigan" target="_blank" class="card text-center">
+    <div class="thumbnail">
+        <div class="card-image geopattern" data-pattern-id="kerrigan">
+            <div class="card-image-cell">
+                <h3 class="card-title">
+                    kerrigan
+                </h3>
+            </div>
+        </div>
+        <div class="caption">
+            <div class="card-description">
+                <p class="card-text">基于Tornado实现的一套配置中心，可基于分项目、环境管理配置，语法高亮、对比历史版本、快速回滚等，并提供Restful风格的API</p>
+            </div>
+            <div class="card-text">
+                <span class="meta-info" title="10 stars">
+                    <span class="octicon octicon-star"></span> 10
+                </span>
+                <span class="meta-info" title="15 forks">
+                    <span class="octicon octicon-git-branch"></span> 15
+                </span>
+                <span class="meta-info" title="Last updated：2019-06-25 08:12:06 UTC">
+                    <span class="octicon octicon-clock"></span>
+                    <time datetime="2019-06-25 08:12:06 UTC">2019-06-25</time>
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
 
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+            </div>
+        </div>
+    </section>
+    <!-- /section.content -->
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/hux-blog.min.js "></script>
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2015
+                    <span title="Yanghongfei">Yanghongfei</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="http://github.com/opendevops-cn/opendevops" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="http://172.16.0.101:4000/" title="首页" target="">首页</a>
+                </li>
+                
+                <li>
+                    <a href="http://172.16.0.101:4000/categories/" title="分类" target="">分类</a>
+                </li>
+                
+                <li>
+                    <a href="http://172.16.0.101:4000/wiki/" title="维基" target="">维基</a>
+                </li>
+                
+                <li>
+                    <a href="http://172.16.0.101:4000/links/" title="链接" target="">链接</a>
+                </li>
+                
+                <li>
+                    <a href="http://172.16.0.101:4000/about/" title="关于" target="">关于</a>
+                </li>
+                
+                <li><a href="http://172.16.0.101:4000/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="http://172.16.0.101:4000/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="http://172.16.0.101:4000/assets/js/geopattern.js"></script>
+    <script src="http://172.16.0.101:4000/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="http://172.16.0.101:4000/assets/css/globals/prism.css">
     <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
     </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
 
+    
 
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
+    
 
-<!--fastClick.js -->
-<script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
+    
 
+    
 
-<!-- Google Analytics -->
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'yanghongfei.github.io';
+        ga('create', 'UA-80669434-1', 'auto');
+        ga('send', 'pageview');
 
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
-
-<!-- Baidu Tongji -->
-
-<script>
-    // dynamic User by Hux
-    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
-
-    // Originial
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
-
-
-
-<!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
+      </script>
+    </div>
+    
 </body>
-
 </html>

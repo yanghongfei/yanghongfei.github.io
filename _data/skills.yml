@@ -1,0 +1,26 @@
+- name: OPS
+  keywords:
+      - linux
+      - git
+      - svn
+      - zabbix
+      - nginx
+      - mysql
+      - redis
+      - php
+      - SaltStack
+      - Ansible
+      - Docker
+      - K8s
+      - DNS
+      - Node
+
+
+- name: Development
+  keywords:
+      - Linux
+      - Shell
+      - Python
+      - Tornado
+      - Vue
+      - iview-admin

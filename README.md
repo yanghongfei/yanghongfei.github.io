@@ -22,14 +22,3 @@
 4. Start Jekyll server: `bundle exec jekyll serve --watch --host=0.0.0.0`
 
 ---
-
-### Demo
-
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g19iev9ih8j31gn0ot4qp.jpg)
-
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g19ievacumj31gf0o07wh.jpg)
-
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g19ieut333j31gd0o4thb.jpg)
-
-![](https://ws1.sinaimg.cn/large/005X1wn0gy1g19ieuvpodj31gm0os46u.jpg)
-
