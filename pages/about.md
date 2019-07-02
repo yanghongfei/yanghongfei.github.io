@@ -51,7 +51,7 @@ Hi, I'm Yangxiaofei
 
 ## Skill Keywords
 
-> 平时工作中接触到的一些技术
+> 平时工作中接触到的一些技术, 运维场景/开发过程中遇到的一些技术
 
 {% for category in site.data.skills %}
 ### {{ category.name }}

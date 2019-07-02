@@ -8,7 +8,7 @@ menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 没有链接的博客是没有灵魂的，膜拜以下各位大佬.
 
 {% for link in site.data.links %}
   {% if link.src == 'life' %}
