@@ -82,7 +82,7 @@ collections:
         permalink: /wiki/:path/
 
 repository: opendevops-cn/opendevops
-
+public_repositories: opendevops-cn/opendevops
 # ---------------- #
 #      Comments    #
 # ---------------- #
