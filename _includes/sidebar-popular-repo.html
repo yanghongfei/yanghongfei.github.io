@@ -1,5 +1,6 @@
 <h3>开源一站式DevOps运维自动化平台</h3>
 {% if site.github.public_repositories != null %}
+{{ site.github.public_repositories }}
 {% assign repos = site.github.public_repositories | sort: "stargazers_count" | reverse%}
 {% for repo in repos | limit: site.side_bar_repo_limit %}
 <a href="{{ repo.html_url }}" target="_blank" class="card text-center">
