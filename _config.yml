@@ -18,7 +18,7 @@ side_bar_repo_limit: 6
 author: Yanghongfei
 organization: 
 organization_url: 
-github_username: yanghongfei
+github_username: opendevops-cn
 location: Shangqiu, HeNan 
 email: yanghongfei97@163.com
 
@@ -82,7 +82,7 @@ collections:
         permalink: /wiki/:path/
 
 repository: opendevops-cn/opendevops
-public_repositories: opendevops-cn/opendevops
+
 # ---------------- #
 #      Comments    #
 # ---------------- #
