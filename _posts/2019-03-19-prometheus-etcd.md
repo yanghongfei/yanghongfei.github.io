@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Prometheus监控外接ETCD集群
+title: 监控 - Prometheus监控外接ETCD集群
 categories: [Prometheus, ETCD, K8S]
 description: Prometheus监控外接ETCD集群
 keywords: K8S, ETCD, Prometheus

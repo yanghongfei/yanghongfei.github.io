@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Prometheus-Operator参考
+title: 监控 - 基于Prometheus Operator的快速部署
 categories: [K8S, Prometheus]
 description: K8S Prometheus-Operator部署及自定义监控
 keywords: K8S, Prometheus

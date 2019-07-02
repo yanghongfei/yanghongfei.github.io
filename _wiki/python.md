@@ -6,8 +6,22 @@ description: Python中的一些记录。
 keywords: Python
 ---
 
-### 1. Python基本使用
-#### 1.1 安装Python3
+
+
+
+**目录**
+
+* TOC
+{:toc}
+
+
+
+### Python基本使用
+
+> 简单的记录下学习Python的那点事情
+
+
+#### 安装Python3
 
 ```
 python3.0安装
@@ -63,21 +77,21 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 ```
 
 
-#### 1.2 打印Python关键字
+#### 打印Python关键字
 ```
 >>> import keyword
 >>> print(keyword.kwlist)
 ['and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'exec', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'print', 'raise', 'return', 'try', 'while', 'with', 'yield']
 >>> 
 ```
-#### 1.3 Python 爬虫工具
+#### Python 爬虫工具
 ```
 HTTrack Website Copier
 http://www.httrack.com/
 
 ```
 
-### 2.  监控nginx端口状态并发送邮件
+### 监控nginx端口状态并发送邮件
 ```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -138,7 +152,7 @@ while True:
          sys.exit('\n')
 ```
 
-### 3. Fabric装饰器远程登陆主机执行命令
+### Fabric装饰器远程登陆主机执行命令
 ```
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
@@ -179,7 +193,7 @@ def mkdir():
 #    execute(gitlabusa)
 ```
 
-### 4. asyncio 异步并发请求URL
+### asyncio 异步并发请求URL
 ```
 import aiohttp
 import asyncio
@@ -208,7 +222,7 @@ if __name__ == '__main__':
     loop.run_until_complete(asyncio.wait(tasks))
     print("the time : ",time.time() - start_time)
 ```
-### 5. Python Django修改admin密码
+### Python Django修改admin密码
 ```
 进入到project目录，进入到Shell模式直接修改
 
@@ -225,11 +239,11 @@ user2 = User.objects.filter(is_superuser = True, is_staff = True)
 print user1, user2
 ```
 
-### 6. Pycharm 激活
+###  Pycharm 激活
 - http://idea.lanyus.com/
 - https://www.jianshu.com/p/79df9ac88e96
 
-### 7. GoogleAuth密钥生成
+### GoogleAuth密钥生成
 ```python
 
 import shortuuid
@@ -239,7 +253,7 @@ google_key = base64.b32encode(bytes(shortuuid.uuid() + shortuuid.uuid(), encodin
 print(google_key)
 ```
 
-### 8. datetime转字符串
+###  datetime转字符串
 ```python
 from datetime import datetime
 >>> end_time = datetime.datetime.now()
@@ -263,7 +277,7 @@ def date_time_string(value):
 
 ```
 
-### 9. python不同路径导入模块
+###  python不同路径导入模块
 ```python
 import os
 import sys
@@ -272,13 +286,13 @@ sys.path.append(Base_DIR)
 from yanghongfei.settings import ALY_INFO
 ```
 
-### 10. python bytes-->dict
+### python bytes-->dict
 ```python
 import json
 res = json.loads(response)
 ```
 
-### 11. Python元组拆包
+###  Python元组拆包
 
 ```python
 >>> lax_coordinates = (33.9425, -118.408056)

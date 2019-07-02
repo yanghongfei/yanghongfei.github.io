@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ReadtheDocs项目写作文档
+title: 文档 - 基于Sphinx + GitHub + ReadtheDocs项目写作文档
 categories: Docs
 description: ReadtheDocs项目写作文档
 keywords: docs, Sphinx 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ZABBIX自定义模板监控
+title: 监控 - 如何对ZABBIX进行自定义模板[示例]
 categories: ZABBIX
 description: ZABBIX自定义模板监控
 keywords: ZABBIX

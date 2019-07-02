@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gitlab API开启Depoly Keys
+title: Git - 基于GitLab API操作Depoly Keys [附代码]
 categories: Git
 description: 使用Gitlab API开启Depoly Keys
 keywords: Git, Gitlab, Depoly Keys 

@@ -340,10 +340,6 @@ $ yum install nginx -y
        }
        
        
-       
-       
-
-
 ```
 ### SSH免密登陆
 ```shell
