@@ -343,9 +343,12 @@ $ yum install nginx -y
 ```
 ### SSH免密登陆
 ```shell
-
+#方式一：直接用copy-id命令
 ssh-keygen -t rsa -C "k8s"
 ssh-copy-id -i id_rsa.pub root@10.10.10.132
+
+#方式二 手动放：
+[ ! -d ~/.ssh ] && mkdir ~/.ssh && chmod 700 ~/.ssh ; [ ! -f ~/.ssh/authorized_keys ] && touch ~/.ssh/authorized_keys;  grep -c "`cat /tmp/id_rsa.pub`" ~/.ssh/authorized_keys >> /dev/null;[ $? == 0 ] || cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && echo ok
 
 ```
 
