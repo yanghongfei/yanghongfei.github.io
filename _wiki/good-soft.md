@@ -6,7 +6,13 @@ description: 用正确的工具做对的事情
 keywords: 软件, 推荐
 ---
 
-好的软件总是给人一种相见恨晚的感觉。
+- 好的软件总是给人一种相见恨晚的感觉。
+    - [百度网盘下载工具](https://www.baiduwp.com/)
+    - Windows搜索工具Everything + Wox
+      - [Everything](https://www.voidtools.com/zh-cn/)
+      - [Wox](http://www.wox.one/)
+
+
 
 ## 软件列表
 
