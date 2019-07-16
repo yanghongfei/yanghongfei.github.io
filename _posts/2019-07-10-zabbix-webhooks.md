@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 监控 - 记录下如何配置ZABBIX的Mail、SMS、Webhook的实现【附源码】
+title: 监控 - 如何配置ZABBIX的Mail、SMS、Webhook的实现【附源码】
 categories: ZABBIX
 description: ZABBIX配置邮件、短信、webhook
 keywords: ZABBIX
@@ -13,6 +13,7 @@ keywords: ZABBIX
 ### 前言
 
 > 一般企业中监控ZABBIX还是最常见的，监控自然需要报警，那么报警最常见的比如一些邮件、短信，这样子出现问题了运维可以根据报警的信息，迅速进行解决问题，我也用ZABBIX很久了，前面文章里面也写了如果针对自己的业务需求实现[ZABBIX自定义模块](http://yanghongfei.me/2019/03/20/zabbix-template/) 自定义Key来实现监控， 本文章主要记录ZABBIX的通知配置及Webhooks怎么用，来帮助一些有需要的同学
+
 
 **简单描述下我这面用到一些Mail SMS webhooks**
 
@@ -141,7 +142,8 @@ else:
   - 告警内容  
 
 - PATH: `Administer`-->`media_types`
-20190716094349.png
+
+![](/images/20190716094349.png)
 
 - ZABBIX3.0+示例
 - PATH: `Administer`-->`media_types`
