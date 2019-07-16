@@ -213,6 +213,87 @@ else:
 
 ![](/images/20190716094651.png)
 
+
+
+### ZABBIX配置SMS
+
+- 这里SMS是基于阿里大鱼的，配置和邮件一样，就是通知方式不同，这里只附上源码脚本，不再进行一步步说明
+
+
+- 脚本放到`/usr/lib/zabbix/alertscripts`
+- 配置`media_types`
+- 配置用户支持`SMS`
+- 配置动作`Action`
+
+
+```python  
+
+import sys, json
+from aliyunsdkdysmsapi.request.v20170525 import SendSmsRequest
+from aliyunsdkcore.client import AcsClient
+import uuid
+from aliyunsdkcore.profile import region_provider
+
+"""
+pip install --upgrade setuptools
+pip install aliyun-python-sdk-core
+pip install aliyun-python-sdk-dysmsapi
+"""
+try:
+    reload(sys)
+    sys.setdefaultencoding('utf8')
+except NameError:
+    pass
+except Exception as err:
+    raise err
+
+# 注意：不要更改
+REGION = "cn-hangzhou"
+PRODUCT_NAME = "Dysmsapi"
+DOMAIN = "dysmsapi.aliyuncs.com"
+ACCESS_KEY_ID = "xxxxxx"
+ACCESS_KEY_SECRET = "xxxxxxxxx"
+
+acs_client = AcsClient(ACCESS_KEY_ID, ACCESS_KEY_SECRET, REGION)
+region_provider.add_endpoint(PRODUCT_NAME, REGION, DOMAIN)
+
+
+def send_sms(business_id, phone_numbers, sign_name, template_code, template_param=None):
+    sms_request = SendSmsRequest.SendSmsRequest()
+    # 申请的短信模板编码,必填
+    sms_request.set_TemplateCode(template_code)
+
+    # 短信模板变量参数
+    if template_param is not None:
+        sms_request.set_TemplateParam(template_param)
+
+    # 设置业务请求流水号，必填。
+    sms_request.set_OutId(business_id)
+
+    # 短信签名
+    sms_request.set_SignName(sign_name)
+
+    # 短信发送的号码列表，必填。
+    sms_request.set_PhoneNumbers(phone_numbers)
+
+    # 调用短信发送接口，返回json
+    sms_response = acs_client.do_action_with_exception(sms_request)
+
+    ##业务处理
+    return sms_response
+
+
+if __name__ == '__main__':
+    __business_id = uuid.uuid1()
+    sendto = str(sys.argv[1])  # zabbix传过来的第一个参数
+    message = str(sys.argv[2])  # zabbix传过来的第二个参数
+    params = {"msg": message}  # 对应短信模板里设置的参数
+    params = json.dumps(params)
+    print(send_sms(__business_id, sendto, "阿里大鱼查看", "阿里大鱼查看", params))
+```
+
+
+
 ### ZABBIX配置Webhooks
 
 > 配置webhooks最主要是为了接收ZABBIX触发的告警，POST发送到你自定义接口中，不但可以实现故障恢复，也可以根据报警分析等操作，具体看个人需求， 这里只介绍ZABBIX3.x+的版本
@@ -324,11 +405,13 @@ python send_alert_to_codo.py http://172.16.0.101:8040/v1/zabbix/send_alert/ aler
 - 为了不影响你现有的`Action`我们专门创建一个Action来触发我们的Webhooks消息
 
 标题内容，这里需要全面一点，我给关键信息都放进去了，然后三个下划线分开的，后续我要做故障自愈用
-···
-{HOSTNAME}___{HOST.IP}___{TRIGGER.NAME}___{TRIGGER.STATUS}___{TRIGGER.SEVERITY}
-···
 
-- 新`clone`一个Action
+```
+{HOSTNAME}___{HOST.IP}___{TRIGGER.NAME}___{TRIGGER.STATUS}___{TRIGGER.SEVERITY}
+
+```
+
+- 新`clone`一个`Action`
 
 ![](/images/20190716100752.png)
 
