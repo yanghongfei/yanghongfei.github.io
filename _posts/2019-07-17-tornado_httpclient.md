@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 开发 - 记一次Tornado异步HttpClient客户端使用【附源码】
-categories: Tornado
+title: DevOps - 记一次Tornado异步HttpClient客户端使用【附源码】
+categories: [Tornado, DevOps]
 description: 异步非阻塞HTTPClient客户端踩坑记录
-keywords: Tornado
+keywords: Tornado, DevOps
 ---
 
 
@@ -12,7 +12,7 @@ keywords: Tornado
 
 ### 前言
 
-> 由于项目都是Tornado写的，其余`libs`里面都是直接用`request`请求，本文主要记一次`tornado`异步客户端使用
+> 由于项目都是Tornado写的，其余`libs`里面都是直接用`requests`请求，本文主要记一次`tornado`异步客户端使用
 
 [tornado.httpclient](https://tornado-zh.readthedocs.io/zh/latest/_modules/tornado/httpclient.html#HTTPClient)  
 
@@ -22,9 +22,9 @@ keywords: Tornado
 这里废话不多说，直接代码示例，方面后续再用到且能很快的入手
 
 
-#### request模式下GET请求
+#### requests模式下GET请求
 
-简单记录下`request`模式下怎么实现带`auth_key`的`GET`请求
+简单记录下`requests`模式下怎么实现带`auth_key`的`GET`请求
 
 ```python
 
@@ -83,9 +83,9 @@ class HttpClientTestHandler(tornado.web.RequestHandler):
 ```
 
 
-#### request模式下POST请求
+#### requests模式下POST请求
 
-简单记录下`request`模式下带`auth_key`和`csrf_key`的`POST`请求
+简单记录下`requests`模式下带`auth_key`和`csrf_key`的`POST`请求
 
 ```python
 
@@ -106,14 +106,14 @@ def post_task():
     #接口
     accept_task_url = 'https://codo-v1.domain.com/api/task/v2/task/accept/'
 
-    #request get先拿到csrf_key
+    #requests get先拿到csrf_key
     req1 = requests.get(accept_task_url, cookies=dict(auth_key=auth_key))
     csrf_key = json.loads(req1.text)['csrf_key']
     
     #设置cookie  auth_key + csrf
     cookies = dict(auth_key=auth_key, csrf_key=csrf_key)
 
-    #request post请求
+    #requests post请求
     req = requests.post(accept_task_url, data=the_body, cookies=cookies)
     
     #请求结果
@@ -171,7 +171,7 @@ class HttpClientTestHandler(tornado.web.RequestHandler):
 
 #### 再来记录一些最常用到的返回值
 
-**request**
+**requests**
 - res.url： 获取请求url
 - res.status_code: 状态码
 - res.text：body数据
