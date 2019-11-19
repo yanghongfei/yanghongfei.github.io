@@ -43,10 +43,12 @@ keywords: Linux, AWS, EC2
 
 ```shell
 
+#重启网卡前
 ip addr 
 
 sudo service network restart
 
+#重启网卡后
 ip addr
 
 ```
@@ -58,38 +60,47 @@ ip addr
 但是，如果你是使用其余平台的CentOS系列机器，非Amazon Linux这样子操作是无法识别到的,这样就需要你手动进行配置
 
 
-- 查看你的网络接口
+#### 查看你的网络接口
+
 ```shell
 
 ls -l /etc/sysconfig/network-scripts/*-eth?
 
 ```
 
-- 拷贝一个新的，手动来操作
+- 拷贝一个新的，手动来操作  
+
 ```
 cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0:1
 
 ```
-- 手动配置网卡信息
+#### 手动配置网卡信息
 
-`vim /etc/sysconfig/network-scripts/ifcfg-eth0:1 `
 
-```
+`vim /etc/sysconfig/network-scripts/ifcfg-eth0:1`
+
+
+```shell
+
 BOOTPROTO=static
 DEVICE=eth0
 ONBOOT=yes
-IPADDR=<private_ip>
+IPADDR="private_ip"
 NETMASK=255.255.255.0
 
 ```
 
-- 启动
+#### 启动
 
 ```shell
 
 ifup eth0:1
 
 ```
+
+#### 测试
+
+你可以使用`ping` / `telnet` 进行测试
 
 **感谢**
 
