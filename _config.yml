@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://yanghongfei.me
+url: http://yanghongfei.github.io
 date_format: "ordinal"
 title: Hi, I'm Yangxiaofei
 subtitle: "一无所知的世界走下去才会有惊喜！"

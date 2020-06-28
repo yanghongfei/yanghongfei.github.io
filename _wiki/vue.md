@@ -52,7 +52,7 @@ keywords: Vue
 - 示例
 
 ```
-#数据：website: "http://yanghongfei.me",
+#数据：website: "http://yanghongfei.github.io",
 
 
 <a v-bind:href="website">web开发</a>
@@ -63,7 +63,7 @@ keywords: Vue
 - 解析html
 - 示例
 ```
-websitetag: "<a href='http://yanghongfei.me'>yanghongfei.me</a>"
+websitetag: "<a href='http://yanghongfei.github.io'>yanghongfei.github.io</a>"
 
 <p v-html="websitetag"></p>
 
