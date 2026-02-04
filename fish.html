@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动积分计算器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title .icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .icon-positive {
+            background: #10b981;
+            color: white;
+        }
+
+        .icon-negative {
+            background: #ef4444;
+            color: white;
+        }
+
+        .icon-pool {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .icon-venue {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .person-count-section {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .count-input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .count-input-group label {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .count-input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .count-input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .input-group label {
+            min-width: 60px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-positive {
+            background: #f0fdf4;
+        }
+
+        .input-negative {
+            background: #fef2f2;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .error-msg {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .success-msg {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #16a34a;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .result-section {
+            display: none;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px;
+            background: #f9fafb;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .result-details {
+            text-align: right;
+        }
+
+        .result-score {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .score-positive {
+            color: #10b981;
+        }
+
+        .score-negative {
+            color: #ef4444;
+        }
+
+        .result-remark {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .summary-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-label {
+            opacity: 0.9;
+        }
+
+        .summary-value {
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.3);
+            margin: 12px 0;
+        }
+
+        .allocation-section {
+            margin-top: 16px;
+        }
+
+        .allocation-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .allocation-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+
+        .allocation-item:last-child {
+            border-bottom: none;
+        }
+
+        .positive-list, .negative-list {
+            margin-bottom: 0;
+        }
+
+        #positiveInputs, #negativeInputs {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .emoji {
+            font-size: 16px;
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 12px;
+            }
+            
+            .card {
+                padding: 16px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 活动积分计算器</h1>
+
+        <!-- 人数设置 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon icon-pool">👥</span>
+                人数设置
+            </div>
+            <div class="person-count-section">
+                <div class="count-input-group">
+                    <label>正向积分人数</label>
+                    <input type="number" id="positiveCount" value="2" min="0" onchange="updateInputFields()">
+                </div>
+                <div class="count-input-group">
+                    <label>负向积分人数</label>
+                    <input type="number" id="negativeCount" value="3" min="0" onchange="updateInputFields()">
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="updateInputFields()">更新人员列表</button>
+        </div>
+
+        <!-- 公共池和场地积分 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon icon-pool">🏦</span>
+                公共池积分
+            </div>
+            <div class="input-group">
+                <label>公共池</label>
+                <input type="number" id="poolScore" placeholder="输入公共池积分" class="input-positive">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon icon-venue">🏟️</span>
+                场地积分
+            </div>
+            <div class="input-group">
+                <label>场地扣除</label>
+                <input type="number" id="venueScore" placeholder="输入场地扣除积分" value="7000">
+            </div>
+            <p style="font-size: 12px; color: #666; margin-top: 8px;">* 场地积分将从公共池中优先扣除，不足部分由正向积分人员分摊</p>
+        </div>
+
+        <!-- 正向积分人员 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon icon-positive">+</span>
+                正向积分人员（赢家）
+            </div>
+            <div id="positiveInputs" class="positive-list">
+                <!-- 动态生成 -->
+            </div>
+        </div>
+
+        <!-- 负向积分人员 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon icon-negative">-</span>
+                负向积分人员（输家）
+            </div>
+            <div id="negativeInputs" class="negative-list">
+                <!-- 动态生成 -->
+            </div>
+        </div>
+
+        <!-- 错误/成功提示 -->
+        <div id="errorMsg" class="error-msg"></div>
+        <div id="successMsg" class="success-msg"></div>
+
+        <!-- 计算按钮 -->
+        <button class="btn btn-primary" onclick="calculate()">📊 开始计算</button>
+
+        <!-- 结果展示 -->
+        <div id="resultSection" class="result-section">
+            <div class="card" style="margin-top: 16px;">
+                <div class="card-title">📈 计算汇总</div>
+                <div class="summary-box">
+                    <div class="summary-row">
+                        <span class="summary-label">正向积分总和</span>
+                        <span class="summary-value" id="totalPositive">+0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">负向积分总和</span>
+                        <span class="summary-value" id="totalNegative">-0</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="summary-row">
+                        <span class="summary-label">公共池积分</span>
+                        <span class="summary-value" id="poolScoreDisplay">+0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">场地扣除</span>
+                        <span class="summary-value" id="venueScoreDisplay">-0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">公共池可分配</span>
+                        <span class="summary-value" id="poolRemaining">+0</span>
+                    </div>
+                    <div id="venueShortfallRow" class="summary-row" style="display: none;">
+                        <span class="summary-label">场地差额分摊</span>
+                        <span class="summary-value" id="venueShortfall">-0</span>
+                    </div>
+                </div>
+
+                <!-- 公共池分摊明细 -->
+                <div id="poolAllocationSection" class="allocation-section" style="display: none;">
+                    <div class="allocation-title">📤 公共池分摊明细（按比例分配给负向人员）</div>
+                    <div id="poolAllocationList"></div>
+                </div>
+
+                <!-- 场地差额分摊明细 -->
+                <div id="venueAllocationSection" class="allocation-section" style="display: none;">
+                    <div class="allocation-title">🏟️ 场地差额分摊明细（由正向人员承担）</div>
+                    <div id="venueAllocationList"></div>
+                </div>
+            </div>
+
+            <!-- 最终结果 -->
+            <div class="card">
+                <div class="card-title">🏆 最终积分结果</div>
+                <div id="finalResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 人员名称生成
+        function getPersonName(index) {
+            const names = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (index < 26) {
+                return names[index];
+            }
+            return names[Math.floor(index / 26) - 1] + names[index % 26];
+        }
+
+        // 更新输入字段
+        function updateInputFields() {
+            const positiveCount = parseInt(document.getElementById('positiveCount').value) || 0;
+            const negativeCount = parseInt(document.getElementById('negativeCount').value) || 0;
+
+            // 生成正向积分输入框
+            const positiveContainer = document.getElementById('positiveInputs');
+            positiveContainer.innerHTML = '';
+            for (let i = 0; i < positiveCount; i++) {
+                const name = getPersonName(i);
+                positiveContainer.innerHTML += `
+                    <div class="input-group">
+                        <label>${name}</label>
+                        <input type="number" id="positive_${i}" placeholder="输入积分（自动+）" class="input-positive" min="0">
+                    </div>
+                `;
+            }
+
+            // 生成负向积分输入框
+            const negativeContainer = document.getElementById('negativeInputs');
+            negativeContainer.innerHTML = '';
+            for (let i = 0; i < negativeCount; i++) {
+                const name = getPersonName(positiveCount + i);
+                negativeContainer.innerHTML += `
+                    <div class="input-group">
+                        <label>${name}</label>
+                        <input type="number" id="negative_${i}" placeholder="输入积分（自动-）" class="input-negative" min="0">
+                    </div>
+                `;
+            }
+
+            hideResults();
+        }
+
+        // 隐藏结果
+        function hideResults() {
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('errorMsg').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'none';
+        }
+
+        // 显示错误
+        function showError(msg) {
+            const errorEl = document.getElementById('errorMsg');
+            errorEl.textContent = '❌ ' + msg;
+            errorEl.style.display = 'block';
+            document.getElementById('successMsg').style.display = 'none';
+        }
+
+        // 显示成功
+        function showSuccess(msg) {
+            const successEl = document.getElementById('successMsg');
+            successEl.textContent = '✅ ' + msg;
+            successEl.style.display = 'block';
+            document.getElementById('errorMsg').style.display = 'none';
+        }
+
+        // 主计算函数
+        function calculate() {
+            hideResults();
+
+            const positiveCount = parseInt(document.getElementById('positiveCount').value) || 0;
+            const negativeCount = parseInt(document.getElementById('negativeCount').value) || 0;
+            const poolScore = parseFloat(document.getElementById('poolScore').value) || 0;
+            const venueScore = parseFloat(document.getElementById('venueScore').value) || 0;
+
+            // 收集正向积分
+            const positivePersons = [];
+            let totalPositive = 0;
+            for (let i = 0; i < positiveCount; i++) {
+                const score = parseFloat(document.getElementById(`positive_${i}`).value) || 0;
+                const name = getPersonName(i);
+                positivePersons.push({ name, score: score, originalScore: score });
+                totalPositive += score;
+            }
+
+            // 收集负向积分
+            const negativePersons = [];
+            let totalNegative = 0;
+            for (let i = 0; i < negativeCount; i++) {
+                const score = parseFloat(document.getElementById(`negative_${i}`).value) || 0;
+                const name = getPersonName(positiveCount + i);
+                negativePersons.push({ name, score: -score, originalScore: -score, allocation: 0 });
+                totalNegative += score;
+            }
+
+            // 验证：正向总和（含公共池） = 负向总和
+            // 场地积分不参与平衡校验，只用于分摊前的扣除
+            // 公式：正向人员 + 公共池 = 负向人员
+            const totalPositiveWithPool = totalPositive + poolScore;
+
+            if (Math.abs(totalPositiveWithPool - totalNegative) > 0.01) {
+                showError(`积分不平衡！正向总和（含公共池）: +${totalPositiveWithPool.toFixed(0)}，负向总和: -${totalNegative.toFixed(0)}，差额: ${(totalPositiveWithPool - totalNegative).toFixed(0)}。请检查输入！`);
+                return;
+            }
+
+            showSuccess('积分校验通过！正在计算分摊...');
+
+            // 计算场地扣除后的公共池剩余
+            let poolRemaining = poolScore - venueScore;
+            let venueShortfall = 0;
+
+            // 如果公共池不足以支付场地费用，差额由正向人员分摊
+            if (poolRemaining < 0) {
+                venueShortfall = -poolRemaining;
+                poolRemaining = 0;
+            }
+
+            // 场地差额分摊给正向人员（按比例）
+            const venueAllocations = [];
+            if (venueShortfall > 0 && totalPositive > 0) {
+                for (let person of positivePersons) {
+                    const ratio = person.originalScore / totalPositive;
+                    const allocation = venueShortfall * ratio;
+                    person.venueAllocation = allocation;
+                    person.score = person.originalScore - allocation;
+                    venueAllocations.push({
+                        name: person.name,
+                        ratio: (ratio * 100).toFixed(1),
+                        allocation: allocation.toFixed(0)
+                    });
+                }
+            }
+
+            // 公共池剩余分摊给负向人员（按比例）
+            const poolAllocations = [];
+            if (poolRemaining > 0 && totalNegative > 0) {
+                for (let person of negativePersons) {
+                    const ratio = Math.abs(person.originalScore) / totalNegative;
+                    const allocation = poolRemaining * ratio;
+                    person.allocation = allocation;
+                    person.score = person.originalScore + allocation;
+                    poolAllocations.push({
+                        name: person.name,
+                        ratio: (ratio * 100).toFixed(1),
+                        allocation: allocation.toFixed(0),
+                        original: Math.abs(person.originalScore).toFixed(0),
+                        final: Math.abs(person.score).toFixed(0)
+                    });
+                }
+            }
+
+            // 显示结果
+            displayResults({
+                totalPositive,
+                totalNegative,
+                poolScore,
+                venueScore,
+                poolRemaining,
+                venueShortfall,
+                positivePersons,
+                negativePersons,
+                poolAllocations,
+                venueAllocations
+            });
+        }
+
+        // 显示结果
+        function displayResults(data) {
+            document.getElementById('resultSection').style.display = 'block';
+
+            // 汇总信息
+            document.getElementById('totalPositive').textContent = `+${data.totalPositive.toFixed(0)}`;
+            document.getElementById('totalNegative').textContent = `-${data.totalNegative.toFixed(0)}`;
+            document.getElementById('poolScoreDisplay').textContent = `+${data.poolScore.toFixed(0)}`;
+            document.getElementById('venueScoreDisplay').textContent = `-${data.venueScore.toFixed(0)}`;
+            document.getElementById('poolRemaining').textContent = `+${data.poolRemaining.toFixed(0)}`;
+
+            // 场地差额分摊
+            const venueShortfallRow = document.getElementById('venueShortfallRow');
+            if (data.venueShortfall > 0) {
+                venueShortfallRow.style.display = 'flex';
+                document.getElementById('venueShortfall').textContent = `-${data.venueShortfall.toFixed(0)}`;
+            } else {
+                venueShortfallRow.style.display = 'none';
+            }
+
+            // 公共池分摊明细
+            const poolAllocationSection = document.getElementById('poolAllocationSection');
+            const poolAllocationList = document.getElementById('poolAllocationList');
+            if (data.poolAllocations.length > 0) {
+                poolAllocationSection.style.display = 'block';
+                poolAllocationList.innerHTML = data.poolAllocations.map(item => `
+                    <div class="allocation-item">
+                        <span>${item.name}（占比 ${item.ratio}%）</span>
+                        <span>分得 +${item.allocation}，原-${item.original} → 最终-${item.final}</span>
+                    </div>
+                `).join('');
+            } else {
+                poolAllocationSection.style.display = 'none';
+            }
+
+            // 场地差额分摊明细
+            const venueAllocationSection = document.getElementById('venueAllocationSection');
+            const venueAllocationList = document.getElementById('venueAllocationList');
+            if (data.venueAllocations.length > 0) {
+                venueAllocationSection.style.display = 'block';
+                venueAllocationList.innerHTML = data.venueAllocations.map(item => `
+                    <div class="allocation-item">
+                        <span>${item.name}（占比 ${item.ratio}%）</span>
+                        <span>承担 -${item.allocation}</span>
+                    </div>
+                `).join('');
+            } else {
+                venueAllocationSection.style.display = 'none';
+            }
+
+            // 最终结果
+            const finalResults = document.getElementById('finalResults');
+            let resultsHtml = '';
+
+            // 正向人员结果
+            for (let person of data.positivePersons) {
+                const finalScore = person.score;
+                let extraInfo = '';
+                if (person.venueAllocation && person.venueAllocation > 0) {
+                    extraInfo = `（原+${person.originalScore.toFixed(0)}，承担场地-${person.venueAllocation.toFixed(0)}）`;
+                }
+                resultsHtml += `
+                    <div class="result-item">
+                        <div class="result-name">${person.name}</div>
+                        <div class="result-details">
+                            <div class="result-score score-positive">+${finalScore.toFixed(0)}</div>
+                            <div class="result-remark">🎉 给我擦皮鞋 ${extraInfo}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 负向人员结果
+            for (let person of data.negativePersons) {
+                const finalScore = Math.abs(person.score);
+                let extraInfo = '';
+                if (person.allocation > 0) {
+                    extraInfo = `（原-${Math.abs(person.originalScore).toFixed(0)}，分得+${person.allocation.toFixed(0)}）`;
+                }
+                resultsHtml += `
+                    <div class="result-item">
+                        <div class="result-name">${person.name}</div>
+                        <div class="result-details">
+                            <div class="result-score score-negative">-${finalScore.toFixed(0)}</div>
+                            <div class="result-remark">🐟 我是鱼，我要擦皮鞋${extraInfo}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            finalResults.innerHTML = resultsHtml;
+
+            // 滚动到结果区域
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateInputFields();
+        });
+    </script>
+</body>
+</html>
